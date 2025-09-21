@@ -1,0 +1,48 @@
+<div>
+    <div class="card-header">Order list</div>
+
+    <div class="top-section">
+        <div class="left-section">
+            <i class="bi bi-plus-lg"></i>
+            <i class="bi bi-filter"></i>
+            <i class="bi bi-arrow-down-up"></i>
+
+        </div>
+        <div class="right-section">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Search">
+        </div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+            <th>Order ID</th>
+            <th>User</th>
+            <th>Project</th>
+            <th>Address</th>
+            <th>Date</th>
+            <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let item of orderlist;let i = index">
+            <tr *ngIf="i > pagesize*pagenumber && i < pagesize*pagenumber +pagesize">
+                <td>{{item.id}}</td>
+                <td><img src="{{item.avatar}}">{{item.name}}</td>
+                <td>{{item.project}}</td>
+                <td>{{item.location}}</td>
+                <td>{{item.date}}</td>
+                <td [ngStyle]="{'color': colormap[item.status] }"><span style="display: inline-block;height: 5px; width: 5px; border-radius: 20px; margin-right: 0.5rem;" [ngStyle]="{'background': colormap[item.status] }"></span>{{item.status}}</td>
+            </tr>
+            </ng-container>
+        </tbody>
+    </table>
+    <div class="pager">
+        <i class="bi bi-chevron-left"></i>
+        <span class="selected">1</span>
+        <span>2</span>
+        <span>3</span>  
+        <span>4</span>        
+        <i class="bi bi-chevron-right"></i>
+    </div>
+    </div>

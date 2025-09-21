@@ -1,0 +1,59 @@
+@import '../../styles/variables.scss';
+
+img {
+    height: 24px;
+    width: 24px;
+    border-radius: 100px;
+    margin-right: 0.5rem;
+}
+    .dark {
+        color: rgba($black, 0.4);
+    }
+
+    .light {
+        color: rgba($black, 0.3);
+    }
+
+.bar-tabs {
+
+
+    ul {
+        list-style-type: none;
+    }
+
+    ul li::before {
+        content: "•";
+        color: rgba($black, 0.3);
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+    }
+}
+
+
+.dashboard-section {
+    ul {
+        padding: 0 0.5rem 0 0.5rem;
+        list-style-type: none;
+        li {
+            display: flex;
+            padding: 0.2rem 0 0.2rem 1.5rem;
+            &.selected {
+                background-color: rgba($black, 0.05);
+                border-radius: 8px;
+            }
+            .arrow-div{
+                padding-right: 0.4rem;
+                color: rgba($black, 0.3);
+            }
+            .bar-div{
+                position: relative;
+                left: -1.5rem;
+                border-radius: 10px;
+                width: 3px;
+                background: $black;
+                height: 1rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,95 @@
+@import './../../styles/variables.scss';
+
+img {
+    height: 24px;
+    width: 24px;
+    border-radius: 50px;
+    margin-right: 0.5rem;
+}
+
+.card-header{
+    font-weight: 600;
+    padding: 1rem 1rem 1rem 0;
+}
+.top-section {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background-color: var(--lightBlue);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left-section {
+        i {
+            margin-right: 1rem;
+        }
+    }
+
+    .right-section {
+        display: flex;
+        align-items: center;
+        color: rgba($black, 0.2);
+
+        position: relative;
+
+        i {
+            font-size: 16px;
+            position: absolute;
+            left: 0.5rem;
+        }
+
+        input {
+            border-radius: 8px;
+            border: 1px solid rgba($black, 0.2);
+            background-color: transparent;
+            padding: 0.2rem 0 0.2rem 2rem;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+table {
+    width: -webkit-fill-available;
+
+    thead {
+        color: rgba($black, 0.4);
+        border-bottom: 1px solid $black;
+
+        th {
+            padding: 0.5rem;
+        }
+    }
+
+    tbody {
+        tr {
+            border-bottom: 1px solid rgba($black, 0.1);
+
+            td {
+                padding: 0.5rem;
+            }
+        }
+    }
+}
+.pager{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    i{
+        margin-right: 1rem;
+    }
+    span{
+        display: inline-block;
+        padding: 0.2rem 0.5rem;
+        margin-right: 0.5rem;
+        cursor: pointer;
+        &.selected{
+            background-color: rgba($black, 0.1);
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    }
+}

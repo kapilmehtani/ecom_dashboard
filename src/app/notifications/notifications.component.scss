@@ -1,0 +1,78 @@
+@import './../../styles/variables.scss';
+
+        .header-text{
+        font-size: 14px;
+        font-weight: 600;
+        padding-bottom: 1rem;
+    }
+.notifications-container{
+    .icon{
+        i{
+            background-color: var(--blue);
+            border-radius: 10px;
+            padding: 0 0.3rem;
+            margin-right: 0.5rem;
+
+        }
+        &.grey-back{
+            i{
+
+            background-color: var(--purple) !important;
+            }
+            // border-radius: 10px;
+            // padding: 0 0.3rem;
+            // margin-right: 0.5rem;
+        }
+    }
+    .title{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .time{
+        font-size: 12px;
+        color: rgba($black , 0.3);
+                &.dark{
+            color: #FFFFFF66 !important;
+
+        }
+    }
+}
+.activities-container{
+
+    img{
+        width: 24px;
+        height: 24px;
+        border-radius: 50px;
+        margin-right: 0.5rem;
+    }
+        .title{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .time{
+        font-size: 12px;
+        color: rgba($black , 0.3);
+        &.dark{
+            color: #FFFFFF66 !important;
+
+        }
+    }
+
+}
+.contacts-container{
+    
+    img{
+        width: 24px;
+        height: 24px;
+        border-radius: 50px;
+        margin-right: 0.5rem;
+    }
+        .title{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+}

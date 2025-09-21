@@ -1,0 +1,38 @@
+<div>
+  <div class="profile p-4">
+    <img src="assets/profile.png" alt="" /><span>ByeWind</span>
+  </div>
+  <div class="bar-tabs d-flex px-4 pb-4">
+    <div class="dark pe-2">Favourites</div>
+    <div class="light">Recently</div>
+  </div>
+  <div class="bar-tabs px-2 pb-4">
+    <ul>
+      <li class="pb-2">Overview</li>
+      <li>Projects</li>
+    </ul>
+  </div>
+  <div class="dashboard-section">
+    <div class="ps-4 pb-2">Dashboard</div>
+    <ul>
+      <li
+        *ngFor="let item of dashboardList" style="cursor: pointer;"
+        [ngClass]="{ selected: item.name === 'Default' }" (click)="changetab(item.name)"> 
+        <div class="bar-div" *ngIf="item.name === 'Default'"></div> 
+        <div class="arrow-div" *ngIf="item.name != 'Default'">></div>
+        {{item.name}}</li>
+    </ul>
+  </div>
+    <div class="px-4 pb-4">
+    <div class="dark pe-2">Pages</div>
+    
+    <ul style="list-style-type: none;" class="p-0">
+        <li *ngFor="let item of pagesList">
+            <i class="bi bi-chevron-down pe-1 cursor-pointer" *ngIf="item=='User Profile'"></i>
+            <i class="bi bi-person-badge pe-1" *ngIf="item=='User Profile'"></i>
+            <i class="pe-4 ps-3" *ngIf="item!='User Profile'"></i>
+            {{item}}
+        </li>
+    </ul>
+  </div>
+</div>
