@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-order-list',
@@ -9,6 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './order-list.component.scss'
 })
 export class OrderListComponent {
+
+  @Input() currentTheme = 'light';
 
   colormap : { [key: string]: string } = {
     'In Progress': '#8A8CD9',

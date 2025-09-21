@@ -1,12 +1,12 @@
-    <div class="top-section">
+    <div class="top-section" >
         <div class="breadcrumb-section">
             <i class="bi bi-layout-sidebar"></i>
             <i class="bi bi-star"></i>
             <div class="dark">Dashboard &nbsp; &nbsp;/ </div>
             <div>Default</div>
         </div>
-        <div class="search-section">
-            <div class="position-relative"><i class="bi bi-search position-absolute"></i><input type="text" placeholder="Search"><span class="position-absolute">⌘/</span></div>
+        <div class="search-section" [ngStyle]="{ 'color': currentTheme == 'light' ? 'black' : 'white'}">
+            <div class="position-relative" [ngStyle]="{ 'color': currentTheme == 'light' ? 'black' : 'white'}"><i class="bi bi-search position-absolute"></i><input [ngStyle]="{ 'color': currentTheme == 'light' ? 'black' : 'white'}" type="text" placeholder="Search"><span class="position-absolute">⌘/</span></div>
             <i class="bi bi-sun" (click)="toogleTheme()"></i>
             <i class="bi bi-clock"></i>
             <i class="bi bi-bell"></i>
@@ -29,7 +29,7 @@
                     </div>
                 </ng-container>
             </div>
-            <div class="col-6" style="background-color: var(--lightBlue);border-radius: 8px;">
+            <div class="col-6" [ngStyle]="{'background-color': currentTheme === 'light' ? 'var(--lightBlue)' : '#2a2a2a'}" style="border-radius: 8px;">
                 <div class="card-header p-3">Projection Vs Actuals</div>
                 <apx-chart 
                 [series]="chartOptions.series"
@@ -46,7 +46,9 @@
         </div>
 
         <div class="col-12 mb-4 d-flex">
-            <div class="col-9 p-3" style="background-color: var(--lightBlue);border-radius: 8px;">
+            <div class="col-9 p-3" [ngStyle]="{'background-color': currentTheme === 'light' ? 'var(--lightBlue)' : '#2a2a2a'}" style="border-radius: 8px;">
+                <div class="card-header p-3">Revenue</div>
+
                 <apx-chart
                 [series]="linechartOptions.series"
                 [chart]="linechartOptions.chart"
@@ -63,16 +65,16 @@
             </div>
         </div>
         <div class="col-12 d-flex">
-            <div class="col-9 table-div me-4 p-3" style="background-color: var(--lightBlue);border-radius: 8px;">
+            <div class="col-9 table-div me-4 p-3"  [ngStyle]="{'background-color': currentTheme === 'light' ? 'var(--lightBlue)' : '#2a2a2a'}" style="border-radius: 8px;">
                 <div class="card-header">Top Selling Products</div>
 
                 <table>
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Amount</th>
+                            <th  [ngStyle]="{'color': currentTheme != 'light' ? '#FFFFFF66' : null}">Name</th>
+                            <th [ngStyle]="{'color': currentTheme != 'light' ? '#FFFFFF66' : null}">Price</th>
+                            <th [ngStyle]="{'color': currentTheme != 'light' ? '#FFFFFF66' : null}">Quantity</th>
+                            <th [ngStyle]="{'color': currentTheme != 'light' ? '#FFFFFF66' : null}">Amount</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -86,7 +88,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="col-3 p-3" style="background-color: var(--lightBlue);border-radius: 8px;">
+            <div class="col-3 p-3" [ngStyle]="{'background-color': currentTheme === 'light' ? 'var(--lightBlue)' : '#2a2a2a'}" style="border-radius: 8px;">
                 <div class="card-header">Total Sales</div>
                <canvas baseChart
                      [data]="pieChartData"
@@ -119,4 +121,4 @@
 
 
 
-<app-order-list *ngIf="selectedtab=='Ecommerce'"></app-order-list>
+<app-order-list [currentTheme]="currentTheme" *ngIf="selectedtab=='Ecommerce'"></app-order-list>

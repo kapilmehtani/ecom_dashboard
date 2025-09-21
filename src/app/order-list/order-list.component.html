@@ -1,16 +1,16 @@
 <div>
     <div class="card-header">Order list</div>
 
-    <div class="top-section">
+    <div class="top-section" [ngStyle]="{'background-color': currentTheme !== 'light' ? '#2a2a2a' : null}">
         <div class="left-section">
             <i class="bi bi-plus-lg"></i>
             <i class="bi bi-filter"></i>
             <i class="bi bi-arrow-down-up"></i>
 
         </div>
-        <div class="right-section">
+        <div class="right-section" [ngStyle]="{ 'color': currentTheme == 'light' ? 'black' : 'white'}">
             <i class="bi bi-search"></i>
-            <input type="text" placeholder="Search">
+            <input [ngStyle]="{'background-color': currentTheme == 'light' ? 'transparent' : 'black', 'color': currentTheme == 'light' ? 'black' : 'white'}" type="text" placeholder="Search">
         </div>
     </div>
     <table>
